@@ -18,6 +18,17 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.divForm {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.result{
+  margin-top: 40px;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
