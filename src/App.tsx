@@ -52,7 +52,7 @@ function App() {
                 </p>
             </div>
 
-            <div className="divForm" style={{ display: 'flex', justifyContent: 'center', gap: '20px', margin: '20px 0' }}>
+            <div className="divForm">
                 <Form title="Monster 1" sendDataToParent={handleDataFromChild1} />
                 <Form title="Monster 2" sendDataToParent={handleDataFromChild2} />
             </div>

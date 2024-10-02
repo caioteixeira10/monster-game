@@ -20,7 +20,7 @@
 
 .divForm {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px;
   margin: 20px 0;
 }
