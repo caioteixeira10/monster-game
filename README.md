@@ -1,50 +1,25 @@
-# React + TypeScript + Vite
+# Batalha de Monstros
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bem-vindo à Batalha de Monstros! Aqui, você pode cadastrar monstros únicos informando nome, ataque, defesa, velocidade e pontos de vida. Após cadastrar apertando o botão submit, o jogo determinará automaticamente quem ataca primeiro, considerando a velocidade e, em caso de empate, o ataque. O dano será calculado com base nas estatísticas de cada monstro, e o resultado será mostrado abaixo. 
 
-Currently, two official plugins are available:
+Para determinar o vencedor é levado em conta as seguintes regras:
+- O monstro com a maior velocidade faz o primeiro ataque; se ambas as velocidades forem iguais, o monstro com o maior ataque vai primeiro.
+- Para calcular o dano (`damage`), subtraia a defesa do ataque (`atack - defense`); a diferença é o dano; se o ataque for igual ou menor que a defesa, o dano é 1.
+- Subtraia o dano do `hp` do monstro que sofreu o ataque (`hp = hp - damage`).
+- Os monstros batalharão em rounds até que um vença; todos os rounds devem ser calculados de uma vez só
+- Quem vence a batalha é o monstro que subtraiu o `hp` do inimigo a zero primeiro
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## A aplicação esta live no seguinte link abaixo:
+https://caioteixeira10.github.io/monster-game/
 
-## Expanding the ESLint configuration
+## Para rodar a aplicação localmente, é necessário rodar os seguintes passos:
+`git clone https://github.com/caioteixeira10/monster-game.git`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+`cd monster-game`
 
-- Configure the top-level `parserOptions` property like this:
+`npm install`
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+`npm run dev`
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Após feito esses passos, a aplicação deverá estar disponível para acesso através do seguinte link abaixo:
+`http://localhost:5174/monster-game`
